@@ -14,7 +14,7 @@ export default function Navbar() {
   const { toggleMode, mode } = context;
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => {console.log("nav rendered"); return state.cart;});
   const logout = () => {
     localStorage.clear("user");
     window.location.href = "/";
